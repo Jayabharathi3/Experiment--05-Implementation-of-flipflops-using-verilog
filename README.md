@@ -134,15 +134,14 @@ RegisterNumber:  212222100013
 ## SR FLIPFLOP
 
 ```c
-module sr(s,r,clk,q,qbar);
-input s,r,clk;
-output q,qbar;
-reg q,qbar;
-always @(posedge clk)
-begin
-q<=s|(~r&q);
-qbar<=r|(~s&~q);
-end
+module SR(S,R,clk,Q,Qbar);
+input S,R,clk;
+output Q,Qbar;
+wire X,Y;
+nand (X,S,clk);
+nand (Y,R,clk);
+nand (Q,X,Qbar);
+nand (Qbar,Y,Q);
 endmodule
 
 ```
@@ -150,35 +149,46 @@ endmodule
 ## JK FLIPFLOP
 
 ```c
-module jk(j,k,clk,q,qbar);
-input j,k,clk;
-output q,qbar;
-reg q,qbar;
-always @(posedge clk)
-begin
-q<=(j&~q)|(~k&q);
-qbar<=~q;
-end 
+module JK(J,K,clk,Q,Qbar);
+input J,K,clk;
+output Q,Qbar;
+wire X,Y;
+nand (X,J,clk,Qbar);
+nand (Y,K,clk,Q);
+nand (Q,X,Qbar);
+nand (Qbar,Y,Q);
 endmodule
 
 ```
 ## T FLIPFLOP
 
 ```c
-module t(clk,T,q,qbar);
-input clk,T;
-output q,qbar;
-reg q,qbar;
-always @(posedge clk)
-begin
-q<=(T&~q)|(~T&q);
-qbar<=~q;
-end 
+module TF(T,clk,Q,Qbar);
+input T,clk;
+output Q,Qbar;
+wire S,R;
+nand (S,T,clk,Qbar);
+nand (R,T,clk,Q);
+nand (Q,S,Qbar);
+nand (Qbar,R,Q);
 endmodule
 
+```
+## D FLIPFLOP
+```c
+
+module DF(D,clk,Q,Qbar);
+input D,clk;
+output Q,Qbar;
+assign Dbar=~D;
+wire X,Y;
+nand (X,D,clk);
+nand (Y,Dbar,clk);
+nand (Q,X,Qbar);
+nand (Qbar,Y,Q);
+endmodule
 
 ```
-
 
 # RTL LOGIC FOR FLIPFLOPS 
 
@@ -186,7 +196,7 @@ endmodule
 ## SR FLIPFLOP
 ## JK FLIPFLOP
 ## T FLIPFLOP
-
+## D FLIPFLOP
 
 
 
@@ -198,7 +208,7 @@ endmodule
 ## SR FLIPFLOP
 ## JK FLIPFLOP
 ## T FLIPFLOP
-
+## D FLIPFLOP
 
 
 
