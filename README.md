@@ -200,9 +200,18 @@ endmodule
 
 
 ## JK FLIPFLOP
+
+![jkrtl](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/2453c293-afdd-4ba3-98cd-c879015cc3a9)
+
+
 ## T FLIPFLOP
+
+![trtl](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/99e86a54-c801-49a8-b13a-fa935feef92d)
+
+
 ## D FLIPFLOP
 
+![drtl](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/3e6d0a64-0655-4505-9f93-3a05e0c7e6c5)
 
 
 
