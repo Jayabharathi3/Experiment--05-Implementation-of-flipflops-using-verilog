@@ -194,6 +194,10 @@ endmodule
 
 
 ## SR FLIPFLOP
+
+![srrtl](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/99099bb0-d78b-47bd-a1dc-ee2f88dedb16)
+
+
 ## JK FLIPFLOP
 ## T FLIPFLOP
 ## D FLIPFLOP
@@ -203,9 +207,11 @@ endmodule
 
 # TIMING DIGRAMS FOR FLIP FLOPS 
 
-
-
 ## SR FLIPFLOP
+
+![srtt](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/1f883e6e-ceb3-4757-8e19-eca732bb2359)
+
+
 ## JK FLIPFLOP
 ## T FLIPFLOP
 ## D FLIPFLOP
