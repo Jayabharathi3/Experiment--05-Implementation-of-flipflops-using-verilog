@@ -122,15 +122,17 @@ Run the program and choose RTL viewer to get RTL realization.
 
 
 
-### PROGRAM 
+## PROGRAM 
 ```c
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
 Developed by: JAYABHARATHI.S
 RegisterNumber:  212222100013
 */
+```
 ## SR FLIPFLOP
 
+```
 module sr(s,r,clk,q,qbar);
 input s,r,clk;
 output q,qbar;
@@ -142,9 +144,10 @@ qbar<=r|(~s&~q);
 end
 endmodule
 
+```
 
 ## JK FLIPFLOP
-
+```
 module jk(j,k,clk,q,qbar);
 input j,k,clk;
 output q,qbar;
@@ -156,10 +159,10 @@ qbar<=~q;
 end 
 endmodule
 
-
+```
 ## T FLIPFLOP
 
-
+```
 module t(clk,T,q,qbar);
 input clk,T;
 output q,qbar;
@@ -175,7 +178,7 @@ endmodule
 ```
 
 
-### RTL LOGIC FOR FLIPFLOPS 
+## RTL LOGIC FOR FLIPFLOPS 
 
 
 ## SR FLIPFLOP
@@ -186,7 +189,7 @@ endmodule
 
 
 
-### TIMING DIGRAMS FOR FLIP FLOPS 
+## TIMING DIGRAMS FOR FLIP FLOPS 
 
 
 
