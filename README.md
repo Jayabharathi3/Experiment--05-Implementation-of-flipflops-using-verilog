@@ -134,58 +134,69 @@ RegisterNumber:  212222100013
 ## SR FLIPFLOP
 
 ```c
-module sr(s,r,clk,q,qbar);
-input s,r,clk;
-output q,qbar;
-reg q,qbar;
-always @(posedge clk)
-begin
-q<=s|(~r&q);
-qbar<=r|(~s&~q);
-end
-endmodule
+module sr(S,R,clk,Q,Qbar);
+	input S,R,clk;
+	output reg Q;
+	output reg Qbar;
+	initial Q=0;
+	initial Qbar=1;
+	always @(posedge clk)
+	begin
+	Q=S|((~R)&Q);
+	Qbar=R|((~S)&(Qbar));
+	end
+	endmodule
 
 ```
 
 ## JK FLIPFLOP
 
 ```c
-module jk(j,k,clk,q,qbar);
-input j,k,clk;
-output q,qbar;
-reg q,qbar;
+module jk(J,K,clk,Q,Qbar);
+input J,K,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
 always @(posedge clk)
 begin
-q<=(j&~q)|(~k&q);
-qbar<=~q;
-end 
+Q=(J&(~Q))|((~K)&Q);
+Qbar=((~J)&(Qbar))|K&(~Qbar);
+end
 endmodule
 
 ```
 ## T FLIPFLOP
 
 ```c
-module t(clk,T,q,qbar);
-input clk,T;
-output q,qbar;
-reg q,qbar;
+module t(T,clk,Q,Qbar);
+input T,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
 always @(posedge clk)
 begin
-q<=(T&~q)|(~T&q);
-qbar<=~q;
-end 
+Q=(T&(~Q))|((~T)&Q);
+Qbar=((~T)&Qbar)|(T&(~Qbar));
+end
 endmodule
+
 
 ```
 ## D FLIPFLOP
 ```c
 
-module d(d,clk,q,qbar);
-input d,clk; 
-output q,qbar;
-reg q,qbar; 
-always @(posedge clk) begin q<=d; 
-qbar<=~q; 
+module d(D,clk,Q,Qbar);
+input D,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin
+Q=D;
+Qbar=~D;
 end
 endmodule
 
@@ -223,9 +234,18 @@ endmodule
 
 
 ## JK FLIPFLOP
+
+![jktt](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/b52abd09-8a6d-4b9e-8d45-9b14414aead6)
+
+
 ## T FLIPFLOP
+
+![ttt](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/e2c89d10-2237-402b-a23e-75ec916c8e86)
+
+
 ## D FLIPFLOP
 
+![dtt](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/4cb2b238-8ad7-4959-a9ee-1c59d67f37d7)
 
 
 
