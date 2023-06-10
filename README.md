@@ -152,19 +152,16 @@ module sr(S,R,clk,Q,Qbar);
 ## JK FLIPFLOP
 
 ```c
-module jk(J,K,clk,Q,Qbar);
-input J,K,clk;
-output reg Q;
-output reg Qbar;
-initial Q=0;
-initial Qbar=1;
+module jkflipflop(j,k,clk,q,qbar);
+input j,k,clk;
+output q,qbar;
+reg q,qbar;
 always @(posedge clk)
-begin
-Q=(J&(~Q))|((~K)&Q);
-Qbar=((~J)&(Qbar))|K&(~Qbar);
+begin 
+q<=(j&~q)|(~k&q);
+qbar<=~q;
 end
 endmodule
-
 ```
 ## T FLIPFLOP
 
@@ -212,8 +209,7 @@ endmodule
 
 ## JK FLIPFLOP
 
-![jkrtl](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/2453c293-afdd-4ba3-98cd-c879015cc3a9)
-
+![image](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/f1755f88-e576-4e1d-8436-826db07088be)
 
 ## T FLIPFLOP
 
@@ -235,8 +231,7 @@ endmodule
 
 ## JK FLIPFLOP
 
-![jktt](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/b52abd09-8a6d-4b9e-8d45-9b14414aead6)
-
+![image](https://github.com/Jayabharathi3/Experiment--05-Implementation-of-flipflops-using-verilog/assets/120367796/3fa089f5-bf39-4c30-9336-0f75fe2f0121)
 
 ## T FLIPFLOP
 
